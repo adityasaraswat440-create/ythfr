@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STUDIO NOIR — Cinematic Digital Design</title>
+  <meta name="description" content="Studio Noir is a cinematic digital design studio crafting immersive, high-contrast experiences through 3D spatial depth and theatrical typography." />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+  <!-- ============================================
+       NAVIGATION
+  ============================================ -->
+  <nav class="nav" id="main-nav">
+    <div class="nav__logo">
+      <span class="nav__live-dot"></span>
+      STUDIO NOIR
+    </div>
+
+    <ul class="nav__links" id="nav-links">
+      <li><a href="#work">WORK</a></li>
+      <li><a href="#pricing" id="nav-pricing-link">PRICING</a></li>
+      <li><a href="#footer">CONTACT</a></li>
+    </ul>
+
+    <button class="nav__cta" id="nav-cta">START A PROJECT</button>
+
+    <button class="nav__hamburger" id="nav-hamburger" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ============================================
+       3D ROLODEX HERO
+  ============================================ -->
+  <section class="hero" id="hero">
+    <div class="hero__bg-text">MEDIA REFINEMENT</div>
+
+    <div class="cube-container">
+      <div class="cube-wrapper">
+        <!-- Face 1 -->
+        <a href="https://scene-stitch-eta.vercel.app/" target="_blank" class="cube-face cube-face--face1" style="text-decoration: none; color: inherit;">
+          <img src="img/lghy.png" alt="Video Editing Interface" />
+          <div class="cube-face__label">VIDEO EDITING</div>
+        </a>
+
+        <!-- Face 2 -->
+        <a href="https://video-swift-trim.vercel.app/" target="_blank" class="cube-face cube-face--face2" style="text-decoration: none; color: inherit;">
+          <img src="img/treg.png" alt="Shorts Trimmer" />
+          <div class="cube-face__label">SHORTS TRIMMER</div>
+        </a>
+
+        <!-- Face 3 -->
+        <div class="cube-face cube-face--face3">
+          <img src="img/cube-3.png" alt="Product design" />
+          <div class="cube-face__label">PRODUCT</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__scroll">
+      <span>SCROLL</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       CASE STUDIES GRID
+  ============================================ -->
+  <section class="case-studies" id="work">
+    <h2 class="section-header reveal">
+      <span>SELECTED WORK</span>
+      CASE<br/>STUDIES
+    </h2>
+
+    <!-- Featured Project -->
+    <div class="project-featured reveal">
+      <div class="project-featured__window-controls">
+        <div class="window-dot window-dot--red"></div>
+        <div class="window-dot window-dot--yellow"></div>
+        <div class="window-dot window-dot--green"></div>
+      </div>
+      <a href="https://clip-weaver-ruby.vercel.app/" target="_blank" style="display: block; width: 100%; height: 100%;">
+        <img src="img/thurj.png" alt="Clipper – Premium Dashboard" />
+      </a>
+      <div class="project-featured__overlay">
+        <h3 class="project-featured__title">Clip Replacer</h3>
+        <p class="project-featured__desc">End-to-end design system and dashboard for a next-gen data analytics platform.</p>
+      </div>
+    </div>
+
+    <!-- Sub-projects -->
+    <div class="projects-grid">
+      <div class="project-card reveal reveal-delay-1">
+        <a href="https://fast-cut-maker-ac751262.vercel.app/" target="_blank" style="display: block; width: 100%; height: 100%;">
+          <img src="img/oplyu.png" alt="Oplyu – Health tracking app" />
+        </a>
+        <div class="project-card__overlay">
+          <h3 class="project-card__title">CLIPPER</h3>
+          <span class="project-card__tag">MOBILE APP</span>
+        </div>
+      </div>
+
+      <div class="project-card project-card--thurj reveal reveal-delay-2">
+        <div class="project-card--thurj__glow"></div>
+        <a href="https://aspect-wizard-app.vercel.app/" target="_blank" style="display: block; width: 100%; height: 100%;">
+          <img src="img/rghy.png" alt="Forges" />
+        </a>
+        <div class="project-card__overlay">
+          <h3 class="project-card__title project-card__title--thurj">FORGES</h3>
+          <span class="project-card__tag">CREATIVE STUDIO</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Popup Overlay -->
+  <div class="popup-overlay" id="free-popup">
+    <div class="popup-content">
+      <div class="popup-glow"></div>
+      <h2>IT'S ALL FREE!</h2>
+      <p>Enjoy the ultimate cinematic digital experience, on us.</p>
+      <button class="popup-btn" id="close-popup">CELEBRATE</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
