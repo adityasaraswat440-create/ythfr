@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>STUDIO NOIR — Cinematic Digital Design</title>
   <meta name="description" content="Studio Noir is a cinematic digital design studio crafting immersive, high-contrast experiences through 3D spatial depth and theatrical typography." />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=3.0" />
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
 <body>
@@ -22,7 +22,7 @@
     <ul class="nav__links" id="nav-links">
       <li><a href="#work">WORK</a></li>
       <li><a href="#pricing" id="nav-pricing-link">PRICING</a></li>
-      <li><a href="#footer">CONTACT</a></li>
+      <li><a href="#" id="nav-contact-link">CONTACT</a></li>
     </ul>
 
     <button class="nav__cta" id="nav-cta">START A PROJECT</button>
@@ -53,9 +53,9 @@
         </a>
 
         <!-- Face 3 -->
-        <div class="cube-face cube-face--face3">
-          <img src="img/cube-3.png" alt="Product design" />
-          <div class="cube-face__label">PRODUCT</div>
+        <div class="cube-face cube-face--face3" id="open-author-popup">
+          <img src="img/person.png" alt="Person" />
+          <div class="cube-face__label cube-face__label--about">ABOUT</div>
         </div>
       </div>
     </div>
@@ -72,7 +72,7 @@
   <section class="case-studies" id="work">
     <h2 class="section-header reveal">
       <span>SELECTED WORK</span>
-      CASE<br/>STUDIES
+      OUR<br/>TOOLS
     </h2>
 
     <!-- Featured Project -->
@@ -82,8 +82,9 @@
         <div class="window-dot window-dot--yellow"></div>
         <div class="window-dot window-dot--green"></div>
       </div>
-      <a href="https://clip-weaver-ruby.vercel.app/" target="_blank" style="display: block; width: 100%; height: 100%;">
-        <img src="img/thurj.png" alt="Clipper – Premium Dashboard" />
+      <a href="https://clip-weaver-ruby.vercel.app/" target="_blank" class="project-link" style="display: block; width: 100%; height: 100%; position: relative;">
+        <img src="img/thurj.png" alt="Clipper – Premium Dashboard" class="img-base" />
+        <img src="img/thurj.png" alt="Clipper – Premium Dashboard" class="img-color-wipe" />
       </a>
       <div class="project-featured__overlay">
         <h3 class="project-featured__title">Clip Replacer</h3>
@@ -94,8 +95,9 @@
     <!-- Sub-projects -->
     <div class="projects-grid">
       <div class="project-card reveal reveal-delay-1">
-        <a href="https://fast-cut-maker-ac751262.vercel.app/" target="_blank" style="display: block; width: 100%; height: 100%;">
-          <img src="img/oplyu.png" alt="Oplyu – Health tracking app" />
+        <a href="https://fast-cut-maker-ac751262.vercel.app/" target="_blank" class="project-link" style="display: block; width: 100%; height: 100%; position: relative;">
+          <img src="img/oplyu.png" alt="Oplyu – Health tracking app" class="img-base" />
+          <img src="img/oplyu.png" alt="Oplyu – Health tracking app" class="img-color-wipe" />
         </a>
         <div class="project-card__overlay">
           <h3 class="project-card__title">CLIPPER</h3>
@@ -105,8 +107,9 @@
 
       <div class="project-card project-card--thurj reveal reveal-delay-2">
         <div class="project-card--thurj__glow"></div>
-        <a href="https://aspect-wizard-app.vercel.app/" target="_blank" style="display: block; width: 100%; height: 100%;">
-          <img src="img/rghy.png" alt="Forges" />
+        <a href="https://aspect-wizard-app.vercel.app/" target="_blank" class="project-link" style="display: block; width: 100%; height: 100%; position: relative;">
+          <img src="img/rghy.png" alt="Forges" class="img-base" />
+          <img src="img/rghy.png" alt="Forges" class="img-color-wipe" />
         </a>
         <div class="project-card__overlay">
           <h3 class="project-card__title project-card__title--thurj">FORGES</h3>
@@ -118,7 +121,24 @@
 
 
 
-  <!-- Popup Overlay -->
+  <!-- Author Popup Overlay -->
+  <div class="popup-overlay" id="author-popup">
+    <div class="popup-content popup-content--author">
+      <div class="popup-glow"></div>
+      <h2 style="font-size: 2rem;">Description About Author</h2>
+      <div style="text-align: left; color: var(--text-secondary); line-height: 1.6; font-size: 0.95rem; margin-bottom: 2.5rem;">
+        <p style="margin-bottom: 1rem;">No name. No face. No traceable origin.</p>
+        <p style="margin-bottom: 1rem;">This platform wasn’t built by a person you can follow, tag, or message. It was assembled quietly, piece by piece, somewhere between late nights and unanswered questions.</p>
+        <p style="margin-bottom: 1rem;">The creator prefers absence over presence. No social links, no public identity, no digital footprint worth chasing. What matters is the work, not the one behind it.</p>
+        <p style="margin-bottom: 1rem;">Some say it’s just a developer who values privacy. Others think it’s something more deliberate — an identity erased on purpose.</p>
+        <p style="margin-bottom: 1rem;">Either way, you won’t find them.</p>
+        <p>Only what they’ve left behind.</p>
+      </div>
+      <button class="popup-btn" id="close-author-popup">CLOSE</button>
+    </div>
+  </div>
+
+  <!-- Pricing Popup Overlay -->
   <div class="popup-overlay" id="free-popup">
     <div class="popup-content">
       <div class="popup-glow"></div>
@@ -128,6 +148,28 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <!-- Contact Popup Overlay -->
+  <div class="popup-overlay" id="contact-popup">
+    <div class="popup-content popup-content--landscape">
+      <div class="popup-glow"></div>
+      <h2 style="font-size: 1.6rem; letter-spacing: 0.05em; line-height: 1.4; margin-bottom: 2.5rem; text-transform: uppercase; background: linear-gradient(90deg, #06B6D4, #7C3AED, #EC4899, #FAB005); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+        The Creator will contact you<br/>when it's time.
+      </h2>
+      <button class="popup-btn" id="close-contact-popup">UNDERSTOOD</button>
+    </div>
+  </div>
+
+  <!-- Start Project Popup Overlay -->
+  <div class="popup-overlay" id="start-project-popup">
+    <div class="popup-content popup-content--16-9">
+      <div class="popup-glow"></div>
+      <h2 style="font-family: 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif; font-size: 2.5rem; line-height: 1.4; background: linear-gradient(270deg, #06B6D4, #7C3AED, #EC4899, #FAB005, #06B6D4); background-size: 400% 400%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: gradientFlow 6s ease infinite;">
+        There are 5 media tools in this website, find them and use them
+      </h2>
+      <button class="popup-btn" id="close-start-popup" style="margin-top: 3rem;">ACCEPTED</button>
+    </div>
+  </div>
+
+  <script src="script.js?v=1.2"></script>
 </body>
 </html>
